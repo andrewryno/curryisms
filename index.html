@@ -1,83 +1,67 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-	<title>Curryisms</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-
-	<style>
-		html {
-		  font-size: calc(12px + 12 * ( (100vw - 420px) / 860));
-		}
-		@media screen and (max-width: 420px) {
-		  html {
-		    font-size: 12px;
-		  }
-		}
-		@media screen and (min-width: 1280px) {
-		  html {
-		    font-size: 24px;
-		  }
-		}
-
-		h1 {
-		  font-size: 2rem;
-		}
-
-		.container {
-		  width: 100vw;
-		  height: 100vh;
-
-		  text-align: center;
-
-		  display: -webkit-box;
-		  display: -webkit-flex;
-		  display: -ms-flexbox;
-		  display: flex;
-		  -webkit-box-pack: center;
-		  -webkit-justify-content: center;
-		      -ms-flex-pack: center;
-		          justify-content: center;
-		  -webkit-box-align: center;
-		  -webkit-align-items: center;
-		      -ms-flex-align: center;
-		          align-items: center;
-		  -webkit-box-orient: vertical;
-		  -webkit-box-direction: normal;
-		  -webkit-flex-direction: column;
-		      -ms-flex-direction: column;
-		          flex-direction: column;
-		}
-		@media screen and (min-width: 992px) {
-			.container {
-				max-width: 50%;
-			}
-		}
-
-		.container * {
-			margin: 15px;
-		}
-	</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Curryisms</title>
+<style>
+html, body {height: 100%;}
+body {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	font-size: 1rem;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-size: calc(12px + 12 * ( (100vw - 420px) / 860));
+	padding: 20px;
+	color: #212529;
+	background: #f8f9fa;
+}
+.container {
+	max-width: 1000px;
+	text-align: center;
+}
+a.btn-outline-primary {
+	box-sizing: border-box;
+	text-decoration: none;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	padding: .5rem 1rem;
+	font-size: 1.1rem;
+	line-height: 1.5;
+	border-radius: .3rem;
+	margin-top: .25rem;
+	margin-bottom: .25rem;
+	color: #B000B5;
+	border-color: #B000B5;
+}
+a.btn-outline-primary:hover {
+    color: #f8f9fa;
+    background-color: #B000B5;
+    border-color: #B000B5;
+}
+</style>
 </head>
 <body>
 	<div class="container" style="">
-		<h1 class="curryism"></h1>
-		<p><a class="btn btn-primary" href="javascript:history.go(0);">refresh</a></p>
+		<h1 id="curryism"></h1>
+		<a class="btn-outline-primary" href="javascript:history.go(0);" role="button">Gat Anuthar #Curryism</a>
 	</div>
 	<script>
-	var curryisms = [
+	const curryisms = [
 		'looks like there is a DB issue and a Server issue that are cussing problems',
 		'But if Autho-Correct was no bt default',
 		'Super Nintendo with RBG out to a CRT 14 inch TV for playing snes games in their true glory.',
 		'Well, either way, Be on the face side!',
 		'just a difference endpoint? lol',
-		'does taht work ?',
 		'they both work.  It is set to be a % so it is ALways in the center',
 		'on Chrom and Safari',
 		'i see it perfectly fone',
-		'i sec',
 		'i am going to call you so confised lol',
 		'looking onw',
 		'Sldo, if you want me to do it TONIGHT (2am ish) i am so it then',
@@ -117,7 +101,6 @@
 		'I am going to make an effort to actual ready what i type before i send it .... we will see how it goes .... :-/',
 		'Tooltips move button by 2px when displayed.  Not an easy solutions and is a but in bootstrap.',
 		'please real the comments i posted :) thanks',
-		'why >',
 		'Harvey Danger actually has some good songs! not just Flag poll sitta .',
 		'You and you damn invites ! why do i have 4 each day! ? damn google',
 		'so am i ROFL this will be fun though! plus it is ... history ... :p',
@@ -179,9 +162,10 @@
 		'Will be looking. Going to catch some shit eye for a bit.',
 		'If not... Bob. Give me your UUID and i will ass it.'
 	];
-
-	var random = curryisms[Math.floor(Math.random() * curryisms.length)];
-	$('.curryism').text(random);
+	function random_curryism(curryisms) {
+		return curryisms[Math.floor(Math.random() * curryisms.length)];
+	}
+	document.getElementById('curryism').innerHTML = random_curryism(curryisms);
 	</script>
 </body>
 </html>
